@@ -23,12 +23,12 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build Release APK
-        run: ./gradlew assembleRelease
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: linphone-release
-          path: app/build/outputs/apk/release/*.apk
+          name: linphone-debug
+          path: app/build/outputs/apk/debug/*.apk
           retention-days: 7
